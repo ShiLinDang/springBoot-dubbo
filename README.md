@@ -10,3 +10,8 @@
 持久层
 # test-entity
 实体
+# 依赖关系
+api 依赖 entity
+service 依赖 dao,api
+client 依赖 api
+
