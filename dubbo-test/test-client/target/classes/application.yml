@@ -1,0 +1,10 @@
+spring:
+  dubbo:
+    module: client
+    application:  test-client
+    registry:
+      address:  zookeeper://47.98.238.150:2181
+    protocol:
+      name: dubbo
+      port: 20880
+    scan: com.java4all.controller

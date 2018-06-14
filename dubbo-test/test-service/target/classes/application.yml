@@ -1,0 +1,26 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring-boot
+    username: root
+    password: admin
+    driver-class-name: com.mysql.jdbc.Driver
+  dubbo:
+    provider:
+      retries: 0
+      timeout: 10000
+    module: provider
+    application:
+      name: test-service
+    registry:
+      address:  zookeeper://47.98.238.150:2181
+    protocol:
+      name: dubbo
+      port: 20880
+    scan: com.java4all
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+server:
+  port: 8088
+

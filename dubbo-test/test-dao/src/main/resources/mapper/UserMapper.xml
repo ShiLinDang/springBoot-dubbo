@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java4all.dao.UserDao">
+    <resultMap id="BaseResultMap" type="com.java4all.entity.User">
+        <id column="id" jdbcType="VARCHAR" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+        <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+        <result column="score" jdbcType="INTEGER" property="score" />
+        <result column="size" jdbcType="INTEGER" property="size" />
+    </resultMap>
+
+    <sql id="Base_Column">
+        id,name,mobile,nick_name,score,size
+    </sql>
+    <select id="findByMobile" parameterType="String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column" />
+        from user
+        where
+        mobile = #{mobile,jdbcType=VARCHAR}
+    </select>
+</mapper>
