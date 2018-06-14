@@ -18,6 +18,6 @@ public class UserController {
     public String showName(String mobile){
         User user = userService.findByMobile(mobile);
         String name = user.getName();
-        return name;
+        return name+"你好啊!!!";
     }
 }
